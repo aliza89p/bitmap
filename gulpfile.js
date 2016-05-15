@@ -18,4 +18,4 @@ gulp.task('mocha', () => {
 		.pipe(mocha());
 });
 
-gulp.watch('./*', ['lint', 'mocha']);
+gulp.watch('./*.js', ['lint', 'mocha']);
