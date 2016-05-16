@@ -1,5 +1,5 @@
 const fs = require('fs');
-const file = fs.readFileSync('../img/palette-bitmap.bmp');
+const file = fs.readFileSync('img/palette-bitmap.bmp');
 const headers = {};
 
 console.log(file.toString('hex', 54, 1078));
@@ -25,4 +25,4 @@ var transform = module.exports = (image) => {
   writeStream.end();
 };
 
-transform('../img/new-palette-bitmap.bmp');
+transform('img/new-palette-bitmap.bmp');

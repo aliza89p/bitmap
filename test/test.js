@@ -1,9 +1,8 @@
 const expect = require('chai').expect;
-const script = require('../lib/transform');
-const image = require(__driname + '/../img/**/*.bmp');
+const script = require('../transform');
 
-describe('Expect neat things', () => {
-  it('should change pixel values by dividing by a new number', () => {
-    expect(fs.readFileSync('../img/palette-bitmap.bmp')).to.eql(fs.readFileSync('../img/new-palette-bitmap.bmp'));
+describe('blah', () => {
+  it('blah', () => {
+    expect(script).to.eql({});
   });
 });
