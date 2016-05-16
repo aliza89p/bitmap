@@ -16,7 +16,7 @@ headers.transform = (image) => {
 
   for (var i = 0; i < file.length; i++) {
     var data = file[i];
-    if (i > headers.pixelStart ) data = data / Math.ceil(Math.random() * 6) + 1;
+    if (i > 54 && i < headers.pixelStart) data = data / Math.ceil(Math.random() * 6) + 1;
     var buf = new Buffer(1);
     buf.writeUInt8(data, 0);
     writeStream.write(buf);
