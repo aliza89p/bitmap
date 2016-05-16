@@ -1,7 +1,7 @@
 const fs = require('fs');
 const expect = require('chai').expect;
 const script = require('../transform');
-const headers = headers;
+// const headers = headers;
 
 describe('Different images', () => {
   it('The first image shoudl be different than the second image', () => {
@@ -9,11 +9,11 @@ describe('Different images', () => {
   });
 });
 
-describe('headers exporting', () => {
-  before(done => {
-    fs.readFile('../transform.js', done);
-  });
-  it('should have the type BM', () => {
-    expect(headers).to.not.have.property('type', 'BM');
-  });
-});
+// describe('headers exporting', () => {
+//   before(done => {
+//     fs.readFile('../transform.js', done);
+//   });
+//   it('should have the type BM', () => {
+//     expect(headers).to.not.have.property('type', 'BM');
+//   });
+// });
