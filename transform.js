@@ -2,8 +2,6 @@ const fs = require('fs');
 const file = fs.readFileSync('img/palette-bitmap.bmp');
 const headers = {};
 
-console.log(file.toString('hex', 54, 1078));
-
 headers.type = file.toString('ascii', 0, 2);
 headers.size = file.readUInt32LE(2);
 headers.pixelWidth = file.readUInt32LE(18);
