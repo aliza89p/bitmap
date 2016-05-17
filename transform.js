@@ -1,5 +1,5 @@
 const fs = require('fs');
-const file = fs.readFileSync('img/palette-bitmap.bmp');
+const file = fs.readFileSync('img/non-palette-bitmap.bmp');
 module.exports = exports = headers;
 
 const headers = {};
@@ -16,13 +16,13 @@ headers.transform = (image) => {
 
   for (var i = 0; i < file.length; i++) {
     var data = file[i];
-    if (i > 54 && i < headers.pixelStart) data = data / Math.ceil(Math.random() * 6) + 1;
+    if (i > headers.pixelStart) data = data / Math.ceil(Math.random() * 6) + 1;
     var buf = new Buffer(1);
     buf.writeUInt8(data, 0);
     writeStream.write(buf);
   }
-  console.log('transforming');
+  console.log('transformed');
   writeStream.end();
 };
 
-headers.transform('img/new-palette-bitmap.bmp');
+headers.transform('img/new-non-palette-bitmap.bmp');
