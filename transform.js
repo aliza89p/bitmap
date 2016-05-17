@@ -1,7 +1,5 @@
 const fs = require('fs');
 const file = fs.readFileSync('img/non-palette-bitmap.bmp');
-module.exports = exports = headers;
-
 const headers = {};
 
 headers.type = file.toString('ascii', 0, 2);
@@ -11,7 +9,7 @@ headers.pixelHeight = file.readUInt32LE(22);
 headers.numberOfColors = file.readUInt32LE(46);
 headers.pixelStart = file.readUInt32LE(10);
 
-headers.transform = (image) => {
+headers.transform = module.exports = (image) => {
   var writeStream = fs.createWriteStream(image);
 
   for (var i = 0; i < file.length; i++) {
@@ -26,3 +24,5 @@ headers.transform = (image) => {
 };
 
 headers.transform('img/new-non-palette-bitmap.bmp');
+
+module.exports.headers = headers;
